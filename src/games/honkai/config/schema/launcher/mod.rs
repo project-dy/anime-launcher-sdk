@@ -56,6 +56,7 @@ impl Default for LauncherBehavior {
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Launcher {
     pub language: String,
+    pub font: String,
     pub edition: GameEdition,
     pub style: LauncherStyle,
     pub temp: Option<PathBuf>,
@@ -72,6 +73,7 @@ impl Default for Launcher {
     fn default() -> Self {
         Self {
             language: String::from("en-us"),
+            font: String::from("Noto Sans"),
             edition: GameEdition::from_system_lang(),
             style: LauncherStyle::default(),
             temp: launcher_dir().ok(),
